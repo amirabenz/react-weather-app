@@ -11,7 +11,15 @@ export default function App() {
           target="_blank noreferrer"
         >
           Amira Benzid
-        </a>
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://github.com/amirabenz/react-weather-app"
+          target="_blank"
+        >
+          opened-sourced
+        </a>{" "}
+        on GitHub
       </footer>
     </div>
   );
