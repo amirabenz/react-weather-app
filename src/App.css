@@ -1,0 +1,9 @@
+.App {
+  font-family: "Quicksand", sans-serif;
+  margin: 20px;
+}
+.App footer {
+  text-align: center;
+  font-size: 12px;
+  margin: 10px 0;
+}

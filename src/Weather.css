@@ -1,0 +1,117 @@
+.Weather {
+  background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/028/984/original/parrish-freeman-H1lq6G3WCdQ-unsplash.jpg?1647004335")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 500px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  display: block;
+  margin: 0 auto;
+}
+.Weather .search-input {
+  border: none;
+  border-radius: 10px;
+  padding: 3px 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.Weather .search-btn {
+  border: 2px solid #ffc107;
+  border-radius: 20px;
+  color: white;
+  background-color: transparent;
+  margin: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-in-out;
+}
+.Weather .search-btn:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+.Weather .current-location {
+  font-size: 13px;
+  border: 2px solid #ffc107;
+  padding: 3px 10px;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-in-out;
+}
+.Weather .current-location:hover {
+  color: black;
+}
+.Weather .actual-city {
+  font-size: 30px;
+  color: white;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 10px;
+}
+.Weather .actual-date {
+  color: white;
+  font-weight: 100;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+.Weather .weather-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  text-align: left;
+}
+.Weather .img-icon {
+  width: 80px;
+  margin-top: 15px;
+}
+.Weather .temperature-row {
+  margin-top: 15px;
+  margin-left: -15px;
+}
+.Weather .temp {
+  font-size: 58px;
+  font-weight: 100;
+  color: white;
+  line-height: 80px;
+}
+.Weather strong {
+  font-weight: 700;
+  color: #ffc107;
+}
+.Weather .degree {
+  position: relative;
+  top: -30px;
+}
+.Weather .celsius,
+.Weather .fahrenheit {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+  margin: 4px;
+}
+.Weather .celsius:hover,
+.Weather .fahrenheit:hover {
+  color: white;
+}
+.Weather ul {
+  list-style-type: none;
+  font-size: 15px;
+  padding: 0;
+  text-align: center;
+}
+.Weather li {
+  font-size: 12px;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 10px 0px;
+  border-radius: 10px;
+  color: black;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
