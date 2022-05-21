@@ -48,7 +48,9 @@ export default function Weather(props) {
         <div className="actual-date">
           Last updated: <FormatDate timestamp={new Date(weatherData.date)} />
         </div>
-        <div className="weather-description ">{weatherData.description}</div>
+        <div className="weather-description text-capitalize">
+          {weatherData.description}
+        </div>
         <div className="row clearfix">
           <div className="col-2">
             <img src={weatherData.icon} alt="" className="img-icon " />
@@ -89,7 +91,8 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "b2481b4823de47d81b7eeb0043f00d82";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=london&appid=${apiKey}&units=metric`;
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(url).then(handleResponse);
     return "LOADING......";
   }
