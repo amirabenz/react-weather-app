@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
-import FormatDate from "./FormatDate";
+import WeatherInfo from "./WeatherInfos";
 
 export default function Weather(props) {
   let [weatherData, SetWeatherData] = useState({ ready: false });
@@ -40,53 +40,7 @@ export default function Weather(props) {
             current location
           </button>
         </form>
-
-        <div className="actual-city">
-          {weatherData.city}, {weatherData.country}
-        </div>
-
-        <div className="actual-date">
-          Last updated: <FormatDate timestamp={weatherData.date} />
-        </div>
-        <div className="weather-description text-capitalize">
-          {weatherData.description}
-        </div>
-        <div className="row clearfix">
-          <div className="col-2">
-            <img src={weatherData.icon} alt="" className="img-icon " />
-          </div>
-          <div className="col-4 temperature-row ">
-            <span className="temp ">{weatherData.temp}</span>
-            <div className="degree d-inline">
-              <a href="/" className="celsius">
-                <strong> °C</strong>
-              </a>
-
-              <span className="separator">|</span>
-              <a href="/" className="fahrenheit">
-                °F
-              </a>
-            </div>
-          </div>
-
-          <div className="col-6">
-            <ul>
-              <li>
-                Humidity
-                <div>
-                  <span className="humidity">{weatherData.humidity}</span>%
-                </div>
-              </li>
-              <li>
-                Wind
-                <div>
-                  <span className="wind">{weatherData.wind}</span>
-                  <span className="wind-unit">Km/h</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
