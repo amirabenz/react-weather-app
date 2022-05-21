@@ -10,7 +10,7 @@ export default function Weather(props) {
     SetWeatherData({
       city: response.data.name,
       country: response.data.sys.country,
-      date: response.data.dt * 1000,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].main,
       icon: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
       temp: Math.round(response.data.main.temp),
@@ -46,7 +46,7 @@ export default function Weather(props) {
         </div>
 
         <div className="actual-date">
-          Last updated: <FormatDate timestamp={new Date(weatherData.date)} />
+          Last updated: <FormatDate timestamp={weatherData.date} />
         </div>
         <div className="weather-description text-capitalize">
           {weatherData.description}
