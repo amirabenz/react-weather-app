@@ -24,7 +24,12 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <form>
-          <input type="search" placeholder="search" className="search-input" />
+          <input
+            type="search"
+            placeholder="search"
+            className="search-input"
+            autoFocus="on"
+          />
           <button type="submit" className="search-btn">
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
