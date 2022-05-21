@@ -1,6 +1,7 @@
 .App {
   font-family: "Quicksand", sans-serif;
-  margin: 20px;
+  margin: 20px auto;
+  max-width: 550px;
 }
 .App footer {
   text-align: center;
