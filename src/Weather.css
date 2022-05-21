@@ -69,8 +69,7 @@
   text-align: left;
 }
 .Weather canvas {
-  width: 68px;
-  margin-top: 25px;
+  margin-top: 22px;
   margin-left: 10px;
 }
 .Weather .temperature-row {
