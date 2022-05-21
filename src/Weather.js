@@ -8,6 +8,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     console.log(response.data);
     SetWeatherData({
+      ready: true,
       city: response.data.name,
       country: response.data.sys.country,
       date: new Date(response.data.dt * 1000),
@@ -16,7 +17,6 @@ export default function Weather(props) {
       temp: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
-      ready: true,
     });
   }
 
