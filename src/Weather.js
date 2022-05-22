@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfos";
+import { RingSpinner } from "react-spinner-overlay";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [weatherData, setWeatherData] = useState({ ready: false });
+
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
@@ -60,6 +62,10 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "LOADING......";
+    return (
+      <div className="Loader position-absolute top-50 start-50 translate-middle">
+        <RingSpinner loading={true} color="#ffc107" />
+      </div>
+    );
   }
 }
