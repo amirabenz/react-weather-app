@@ -68,16 +68,11 @@
   font-size: 12px;
   text-align: left;
 }
-.Weather canvas {
-  margin-top: 26px;
-  margin-left: 10px;
-}
 .Weather .temperature-row {
-  margin-top: 15px;
-  margin-left: -20px;
 }
+
 .Weather .temp {
-  font-size: 58px;
+  font-size: 82px;
   font-weight: 100;
   color: white;
   line-height: 80px;
@@ -88,7 +83,7 @@
 }
 .Weather .degree {
   position: relative;
-  top: -30px;
+  top: -50px;
 }
 .Weather .celsius,
 .Weather .fahrenheit {
@@ -113,8 +108,12 @@
   background-color: rgba(255, 255, 255, 0.5);
   margin: 10px 0px;
   border-radius: 10px;
-  color: black;
+  color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.Weather li div {
+  font-weight: 500;
+  color: black;
 }
 .Loader {
   display: inline;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfos";
+import WeatherForecast from "./WeatherForecast";
 import { RingSpinner } from "react-spinner-overlay";
 
 export default function Weather(props) {
@@ -11,6 +12,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
+      coords: response.data.coord,
       ready: true,
       city: response.data.name,
       country: response.data.sys.country,
@@ -58,6 +60,7 @@ export default function Weather(props) {
           </button>
         </form>
         <WeatherInfo data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coords} />
       </div>
     );
   } else {
