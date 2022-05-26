@@ -1,47 +1,44 @@
-import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
+import ForecastDay from "./ForecastDay";
+import { RingSpinner } from "react-spinner-overlay";
 
 export default function WeatherForecast(props) {
   let apiKey = "b2481b4823de47d81b7eeb0043f00d82";
   let lat = props.coordinates.lat;
   let lon = props.coordinates.lon;
-  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let [forecast, setForecast] = useState(null);
+  let [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(false);
+  }, [props.coordinates]);
+
   function handleResponse(response) {
     console.log(response.data);
+    setForecast(response.data.daily);
+    setReady(true);
   }
-  axios.get(url).then(handleResponse);
-  return (
-    <div className="WeatherForecast row">
-      <div className="col day">
-        <div className="ForecastDay">Mon</div>
-        <WeatherIcon code="01d" size={34} color="#ffc107" />
-        <div className="ForcastTemp d-flex justify-content-between">
-          <span className="TempMax">19°</span>
-          <span className="TempMin">10°</span>
-        </div>
+
+  if (ready) {
+    console.log(forecast);
+    return (
+      <div className="WeatherForecast row">
+        {forecast.map((day, index) => {
+          if (index < 6) {
+            return <ForecastDay dayInfos={day} />;
+          }
+        })}
       </div>
-    </div>
-       <div className="WeatherForecast row">
-      <div className="col day">
-        <div className="ForecastDay">Mon</div>
-        <WeatherIcon code="01d" size={34} color="#ffc107" />
-        <div className="ForcastTemp d-flex justify-content-between">
-          <span className="TempMax">19°</span>
-          <span className="TempMin">10°</span>
-        </div>
+    );
+  } else {
+    axios.get(url).then(handleResponse);
+    return (
+      <div className="Loader position-absolute top-50 start-50 translate-middle">
+        <RingSpinner loading={true} color="#ffc107" />
       </div>
-    </div>
-       <div className="WeatherForecast row">
-      <div className="col day">
-        <div className="ForecastDay">Mon</div>
-        <WeatherIcon code="01d" size={34} color="#ffc107" />
-        <div className="ForcastTemp d-flex justify-content-between">
-          <span className="TempMax">19°</span>
-          <span className="TempMin">10°</span>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
