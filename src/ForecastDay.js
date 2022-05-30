@@ -18,7 +18,7 @@ export default function ForecastDay(props) {
         size={34}
         color="#ffc107"
       />
-      <div className="ForcastTemp d-flex justify-content-between">
+      <div className="ForecastTemp d-flex justify-content-between">
         <span className="TempMax">{Math.round(props.dayInfos.temp.max)}°</span>
         <span className="TempMin">{Math.round(props.dayInfos.temp.min)}°</span>
       </div>
